@@ -1,6 +1,12 @@
 name: tg-notify
 
-on: [push, pull_request]
+on:
+  schedule:
+    - cron:  '30 5,7 * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   
 jobs:
   build:
